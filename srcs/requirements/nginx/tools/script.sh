@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 cd /etc/nginx/sites-enabled
 
 ln -s ../sites-available/wordpress.conf .

@@ -1,12 +1,5 @@
 #!/bin/sh
 
-DB_USER="root"
-DB_PASS="lololol"
-
-DB_NAME="wordpress_db"
-DB_USER_NAME="bel-kala"
-DB_USER_PASS="123456"
-
 
 service mariadb start
 sleep 10
