@@ -1,80 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inception Project</title>
-</head>
-<body>
-    <h1>Inception Project</h1>
+# Inception
 
-    <h2>Overview</h2>
-    <p>
-        The Inception project is part of the 42 School curriculum, focusing on creating a web application using Docker. 
-        This project demonstrates proficiency in managing containers and orchestrating services with Docker Compose.
-    </p>
+## Project Overview
 
-    <h2>Project Setup</h2>
-    <p>Follow these steps to get started:</p>
-    <ol>
-        <li><strong>Clone the Repository:</strong></li>
-        <pre><code>git clone https://github.com/your-username/inception-project.git
-cd inception-project</code></pre>
-        <li><strong>Ensure Docker and Docker Compose are Installed:</strong></li>
-        <p>Make sure Docker and Docker Compose are installed on your machine. You can follow the official 
-        <a href="https://docs.docker.com/get-docker/" target="_blank">Docker installation guide</a> for instructions.</p>
-        <li><strong>Review the <code>docker-compose.yml</code> File:</strong></li>
-        <p>The <code>docker-compose.yml</code> file located in the <code>srcs</code> directory defines the services 
-        and configurations for the project.</p>
-    </ol>
+Inception is a System Administration project that focuses on using Docker to set up a small infrastructure composed of different services. The project involves creating a WordPress website with a MySQL database, all containerized and orchestrated using Docker Compose.
 
-    <h2>Using the Makefile</h2>
-    <p>The project includes a <code>Makefile</code> to simplify common Docker Compose commands. Here are the available commands:</p>
-    <ul>
-        <li><strong>Start the Project:</strong></li>
-        <pre><code>make up</code></pre>
-        <p>This command starts the Docker Compose services in detached mode.</p>
+## Key Features
 
-        <li><strong>Stop and Remove the Project:</strong></li>
-        <pre><code>make down</code></pre>
-        <p>This command stops and removes all Docker Compose services.</p>
+- Utilizes Docker and Docker Compose for containerization and orchestration
+- Sets up a NGINX web server with TLSv1.2 or TLSv1.3
+- Implements WordPress with php-fpm
+- Uses MariaDB as the database
+- Configures volumes for persistent data storage
+- Implements a custom Docker network for inter-container communication
 
-        <li><strong>Start Services:</strong></li>
-        <pre><code>make start</code></pre>
-        <p>This command starts Docker Compose services that are currently stopped.</p>
+## Technologies Used
 
-        <li><strong>Stop Services:</strong></li>
-        <pre><code>make stop</code></pre>
-        <p>This command stops Docker Compose services.</p>
+- Docker
+- Docker Compose
+- NGINX
+- WordPress
+- PHP-FPM
+- MariaDB
+- Alpine or Debian (base images)
 
-        <li><strong>Check Service Status:</strong></li>
-        <pre><code>make status</code></pre>
-        <p>This command shows the status of Docker Compose services.</p>
+## Project Structure
 
-        <li><strong>View Logs:</strong></li>
-        <pre><code>make logs</code></pre>
-        <p>This command displays the logs of Docker Compose services.</p>
-    </ul>
+```
+.
+├── Makefile
+└── srcs
+    ├── docker-compose.yml
+    ├── .env
+    └── requirements
+        ├── mariadb
+        │   ├── Dockerfile
+        │   └── conf/
+        ├── nginx
+        │   ├── Dockerfile
+        │   └── conf/
+        └── wordpress
+            ├── Dockerfile
+            └── conf/
+```
 
-    <h2>Makefile Contents</h2>
-    <p>The <code>Makefile</code> includes the following targets:</p>
-    <ul>
-        <li><code>up</code>: Starts services defined in <code>docker-compose.yml</code>.</li>
-        <li><code>down</code>: Stops and removes services.</li>
-        <li><code>start</code>: Starts stopped services.</li>
-        <li><code>stop</code>: Stops running services.</li>
-        <li><code>status</code>: Displays the current status of services.</li>
-        <li><code>logs</code>: Shows service logs.</li>
-    </ul>
+## Setup and Installation
 
-    <h2>Contributing</h2>
-    <p>If you wish to contribute to the project, please fork the repository and submit a pull request with your changes. 
-    Ensure your code adheres to the project's coding standards and includes appropriate tests.</p>
+1. Clone the repository
+2. Navigate to the project directory
+3. Create a `.env` file in the `srcs` directory with necessary environment variables
+4. Run `make` to build and start the containers
 
-    <h2>License</h2>
-    <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+## Usage
 
-    <h2>Contact</h2>
-    <p>For any questions or support, please reach out via email or open an issue on the GitHub repository.</p>
-</body>
-</html>
+After successful setup, the WordPress site will be accessible via HTTPS at `https://your_login.42.fr`.
+
+## Features
+
+- NGINX server with TLS encryption
+- WordPress installation with PHP-FPM
+- MariaDB database
+- Persistent volumes for database and WordPress files
+- Automatic container restart on crash
+- Environment variable configuration
+
+## Notes
+
+- The project is designed to run in a virtual machine
+- All services run in dedicated containers
+- Custom Dockerfiles are used for each service
+- No pre-built images are used (except for Alpine or Debian base images)
+- The NGINX container is the only entry point, accessible via port 443
+
+## Author
+
+[Your Name]
+
+## Acknowledgments
+
+This project was completed as part of the 42 School curriculum.
