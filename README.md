@@ -71,10 +71,4 @@ After successful setup, the WordPress site will be accessible via HTTPS at `http
 - No pre-built images are used (except for Alpine or Debian base images)
 - The NGINX container is the only entry point, accessible via port 443
 
-## Author
 
-[Your Name]
-
-## Acknowledgments
-
-This project was completed as part of the 42 School curriculum.
